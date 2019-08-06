@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var p1 = document.getElementById("p1");
+				setInterval(function(){
+					var d = new Date();
+					//innerHTML 内容（表单控件外）
+					//value 内容(表单控件)
+					//console.log(p1.innerHTML);
+					var day = d.getDay();
+					if(day == "0"){
+						day = "天";
+					}else if(day==1){
+						day = "一";
+					}else if(day==2){
+						day = "二";
+					}else if(day==3){
+						day = "三";
+					}else if(day==4){
+						day = "四";
+					}else if(day==5){
+						day = "五";
+					}else if(day==6){
+						day = "六";
+					}
+					p1.innerHTML = d.toLocaleDateString()+"&ensp;星期"+day+"&ensp;"+fn(d.getHours())+":"+fn(d.getMinutes())+":"+fn(d.getSeconds());
+				},1000)
+				function fn(n){
+					return n>=10?n:"0"+n;
+				}
+				//改变标签样式
+				p1.style.width = 300+ "px";
+				p1.style.background = "green";
+				p1.style.color = "white";
+				p1.style.fontSize = '20px';
+			}
+		</script>
+	</head>
+	<body>
+		<p id="p1">2019年7月2日 星期二 09:44:30</p>
+	</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#list{
+				list-style: none;
+			}
+			li{
+				float: left;
+				width: 200px;
+				position: relative;
+				border-right: solid 1px black;
+			}
+			li>a{
+				background: red;
+				display: block;
+			}
+			li div{
+				position: absolute;
+			}
+			.box{
+				background: wheat;
+				width: 100%;
+				height: 0px;
+				overflow: hidden;
+				transition: all 1s;
+			}
+			.box a{
+				display: block;
+				height: 30px;
+				line-height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="list">
+			<li>
+				<a href="#">首页</a>
+				<div class="box">
+					<a href="#">首页</a>
+					<a href="#">首页</a>
+					<a href="#">首页</a>
+				</div>
+			</li>
+			<li>
+				<a href="#">首页2</a>
+				<div  class="box">
+					<a href="#">首页</a>
+					<a href="#">首页</a>
+					<a href="#">首页</a>
+					<a href="#">首页</a>
+					<a href="#">首页</a>
+				</div>
+			</li>
+			<li>
+				<a href="#">首页3</a>
+				<div  class="box">
+					<a href="#">首页</a>
+					<a href="#">首页</a>
+				</div>
+			</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var oli = document.getElementsByTagName("li");
+		for(var i=0;i<oli.length;i++){
+			oli[i].onmouseover = function(){
+				this.getElementsByTagName("div")[0].style.height =this.getElementsByTagName("div")[0].getElementsByTagName("a").length*30+"px"; 
+			}
+			oli[i].onmouseout = function(){
+				this.getElementsByTagName("div")[0].style.height =0+"px"; 
+			}
+		}
+	</script>
+</html>

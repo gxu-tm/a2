@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var btn = document.getElementsByTagName("button");
+				for(var i=0;i<btn.length;i++){
+					btn[i].onclick = function(){
+						if(this.innerHTML=="收起"){
+							this.innerHTML = "展开";
+							this.parentNode.getElementsByTagName("p")[0].style.display = "none";
+						}else{
+							this.innerHTML = "收起";
+							this.parentNode.getElementsByTagName("p")[0].style.display = "block";
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="list">
+			<li>
+				<h3>1.什么叫做区块连？</h3>
+				<p>等级考试房价快速的恢复快结束的房价快速的恢复快结束的合法的数据后付款</p>
+				<span>2019-6-5</span>
+				<button>收起</button>
+			</li>
+			<li>
+				<h3>2.什么叫做区块连？</h3>
+				<p>等级考试房价快速的恢复快结束的房价快速的恢复快结束的合法的数据后付款</p>
+				<span>2019-6-5</span>
+				<button>收起</button>
+			</li>
+			<li>
+				<h3>3.什么叫做区块连？</h3>
+				<p>等级考试房价快速的恢复快结束的房价快速的恢复快结束的合法的数据后付款</p>
+				<span>2019-6-5</span>
+				<button>收起</button>
+			</li>
+		</ul>
+	</body>
+</html>

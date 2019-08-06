@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			img{
+				position: fixed;
+				top: -100px;
+				left: -100px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var btn = document.getElementById("btn");
+				var img = document.getElementsByTagName("img")[0];
+				document.onclick = function(evt){
+					var evt = evt|| event;
+//					console.log(evt);
+//					console.log(evt.button);
+					console.log("可视区坐标："+evt.clientX+","+evt.clientY);
+					console.log("屏幕区坐标："+evt.screenX+","+evt.screenY);
+					img.style.top = evt.clientY+"px";
+					img.style.left = evt.clientX+"px";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+		<img src="../css/img/new.gif" />
+	</body>
+</html>

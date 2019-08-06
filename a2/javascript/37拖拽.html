@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 200px;
+				height: 150px;
+				background: red;
+				position: absolute;
+				top: 0px;
+				left: 0;
+			}
+			p{
+				background: blueviolet;
+				-webkit-user-select: none;
+				-ms-user-select: none;
+				-moz-user-select: none;
+				user-select: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<p id="p1"><span id="span1">关闭</span></p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var box = document.getElementById("box");
+		var p1 = document.getElementById("p1");
+		var span1 = document.getElementById("span1");
+		p1.onmousedown = function(evt){
+			var evt = evt ||event;
+			var divX = evt.clientX-box.offsetLeft;
+			var divY = evt.clientY-box.offsetTop;
+			document.onmousemove = function(evt){
+				var evt = evt ||event;
+				box.style.left = evt.clientX - divX +"px";
+				box.style.top = evt.clientY - divY +"px";
+			}
+			document.onmouseup = function(){
+				document.onmousemove = null;
+			}
+		}
+//		span1.onclick = function(){
+//			box.style.display = "none"
+//		}
+
+		span1.addEventListener("click",fn,true);
+		function fn(){
+			box.style.display = "none";
+			console.log("a");
+		}
+		document.addEventListener("click",fn1,false);
+		function fn1(){
+			console.log("b");
+		}
+		//移出监听器
+		document.removeEventListener("click",fn1);
+	</script>
+</html>

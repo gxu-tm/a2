@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oimg = document.getElementsByTagName("img");
+				console.log(oimg);
+				setInterval(function(){
+					var d= new Date();
+					var h = d.getHours();
+					var m = d.getMinutes();
+					var s = d.getSeconds();
+					if(h>=10){
+						oimg[0].src ="images/"+parseInt(h/10)+".png";
+						oimg[1].src ="images/"+parseInt(h%10)+".png";
+					}else{
+						oimg[0].src ="images/"+0+".png";
+						oimg[1].src ="images/"+h+".png";
+					}
+					if(m>=10){
+						oimg[3].src ="images/"+parseInt(m/10)+".png";
+						oimg[4].src ="images/"+parseInt(m%10)+".png";
+					}else{
+						oimg[3].src ="images/"+0+".png";
+						oimg[4].src ="images/"+m+".png";
+					}
+					if(s>=10){
+						oimg[6].src ="images/"+parseInt(s/10)+".png";
+						oimg[7].src ="images/"+parseInt(s%10)+".png";
+					}else{
+						oimg[6].src ="images/"+0+".png";
+						oimg[7].src ="images/"+s+".png";
+					}
+				},1000)
+			}
+		</script>
+	</head>
+	<body>
+		<img src="images/1.png" />
+		<img src="images/4.png" />
+		<img src="images/a.png" />
+		<img src="images/4.png" />
+		<img src="images/7.png" />
+		<img src="images/b.png" />
+		<img src="images/3.png" />
+		<img src="images/0.png" />
+	</body>
+</html>

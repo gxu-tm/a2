@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//创建日期对象
+			var d = new Date();
+			
+			//指定日期
+			//var d = new Date("2019-08-02 12:00:00");
+			//var d = new Date(1000);
+			//var d = new Date(2019,06,02);
+			
+			//toDateString()
+			var d1 = d.toDateString();//"Tue Jul 02 2019"
+			
+			//toTimeString() 以特定的格式显示时、分、秒和时区
+			var d1 = d.toTimeString();//"09:28:38 GMT+0800 (中国标准时间)"
+			
+			//toLocaleDateString()//以特定地区格式显示年、月、日
+			var d1 = d.toLocaleDateString();// "2019年7月2日"
+			
+			//set / getDate()	    从Date对象中返回一个月中的某一天(1~31)
+			//var d1 = d.getDate();
+			//var d1 = d.setDate(5);
+			
+			//getDay()	    从Date对象返回一周中的某一天(0~6)
+			var d1 = d.getDay();//0表示星期天
+			
+			//set / getMonth()	    从Date对象中返回月份(0~11)
+			var d1 = d.getMonth();//"6" 0表示一月份
+			
+			//set / getFullYear()	从Date对象以四位数返回年份
+			var d1 = d.getFullYear();
+			
+			//set / getHours()	             返回Date对象的小时(0~23)
+			var d1 = d.getHours();
+			
+			//set / getMinutes()	返回Date对象的分钟(0~59)
+			var d1 = d.getMinutes();
+			
+			//set / getSeconds()	返回Date对象的秒数(0~59)
+			var d1 = d.getSeconds();
+			
+			//set / getMilliseconds()    返回Date对象的毫秒
+			var d1 = d.getMilliseconds();
+			
+			//set / getTime()	             返回1970年1月1日至今的毫秒数
+			var d1 = d.getTime();
+			
+			//getTimezoneOffset()      返回本地时间与格林尼治标准时间(GMT)的分钟差
+			var d1 = d.getTimezoneOffset();
+			
+			//toString()	  把Date对象转换为字符串
+			var d1 = d.toString();
+			
+			//valueOf()   返回Date对象的原始值
+			var d1 = d.valueOf();
+			
+			console.log( d);
+			console.log( d1);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				window.onkeydown = function(evt){
+					var evt = evt||event;
+					if(evt.shiftKey){
+						console.log("按下了shift");
+					}
+					if(evt.ctrlKey){
+						console.log("按下了ctrl");
+					}
+					if(evt.altKey){
+						console.log("按下了alt");
+					}
+					if(evt.metaKey){
+						console.log("按下了meta");
+					}
+					//keyCode属性
+					console.log(evt.keyCode);
+					
+					
+				}
+				//.字符编码 : charCode属性
+				window.onkeypress = function(evt){
+					var evt = evt||event;
+					console.log(evt.charCode);
+				}
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

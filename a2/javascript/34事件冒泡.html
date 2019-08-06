@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+	</body>
+	<script type="text/javascript">
+		var btn = document.getElementById("btn");
+		btn.onclick = function(evt){
+			var oEvent = evt||event;
+			console.log("点击了按钮")
+			//1, 取消冒泡
+			    // oEvent.cancelBubble = true;
+			//2, 停止传播
+			     oEvent.stopPropagation();
+		}
+		document.onclick = function(){
+			console.log("点击了文档")
+		}
+	</script>
+</html>

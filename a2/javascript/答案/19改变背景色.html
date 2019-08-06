@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//通过点击按钮来达到自动循环更改浏览器背景颜色的实例
+			window.onload = function(){
+				var arr = ["red","black","blue","green","pink","gold"];
+				var btn = document.getElementById("btn");
+				var i = 0 ;
+				btn.onclick = function(){
+					setInterval(function(){
+						i++ ; 
+						if(i==arr.length){
+							i=0;
+						}
+						document.body.style.background = arr[i];
+					},1000)
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button id="btn">改变背景色</button>
+	</body>
+</html>

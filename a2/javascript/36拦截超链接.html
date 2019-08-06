@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" />
+		<a href="#">百度</a>
+	</body>
+	<script type="text/javascript">
+		var val = document.getElementsByTagName("input")[0];
+		var a1 = document.getElementsByTagName("a")[0];
+		a1.onclick = function(){
+			if(val.value!=12345){
+				//return false;
+			}else if(val.value==12345){
+				//window.open("https://www.baidu.com","_parent");
+				a1.setAttribute("href","https://www.baidu.com")
+			}
+			console.log(val.value)
+		}
+	</script>
+</html>

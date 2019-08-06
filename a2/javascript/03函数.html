@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//定义函数
+			//function 关键字
+			//fn 函数名
+			function fn(){
+				console.log("a");
+			}
+			//调用函数
+			//fn();
+			
+			////计算2+8的结果。
+			//a,b形参
+			function fn1(a,b){
+				console.log(a+b);
+				console.log(arguments);
+				//lenghth 长度
+				console.log(arguments.length);
+				//访问数组元素,通过下标去访问，从0开始
+				console.log(arguments[1]);
+				//访问数组最后一个数
+				console.log(arguments[arguments.length-1]);
+			}
+			//2,b叫做实参
+			fn1(2,8,10,12,12,12,1,21,23,2,3,4,32,8,10,12,12,12,1,21,23,2,3,4,32,8,10,12,12,12,1,21,23,2,3,4,32,8,10,12,12,12,1,21,23,2,3,4,34,3,5,45,6,5);
+			
+			function fn2(a,b){
+				var s = a+b;	
+				return s ; //返回值
+			}
+			//fn2(3,6);
+			console.log(fn2(3,6));//"9"	
+			
+			//练习：向一个函数传入不定数量的数值求和。
+			function fn3(){
+				var s = 0 ;
+				for(var i=0;i<arguments.length;i++){
+					s+=arguments[i];
+				}
+				return s;
+			}
+			console.log(fn3(2,8,10,12,12,12,1,21,23,2,3,4,32,8,10,12,12,12,1,21,23,2,3,4,32,8,10,12,12,12,1,21,23,2,3,4,32,8,10,12,12,12,1,21,23,2,3,4,34,3,5,45,6,5));
+		
+//			注意：
+//       在一般传值调用的机制中只能把实参传送给形参，而不能把形参的值反向地传送给实参。因此在函数调用过程中，形参值发生改变，而实参中的值不会变化。
+//			function   addNum(n){
+//				 n += 5 ;//n=15;
+//			}
+//			var  a=10;
+//			addNum(a);           
+//		    alert(a);// 10
+
+			//作用域
+			//var a = 10;
+		    function m1(){
+		    	//a1 局部变量
+				var a1 = 5;
+		        alert(a1);//5
+		    }
+		    //a2 全局变量
+		    var a2 = 10 ;
+			m1();
+		    alert(a2);  
+		    
+		    //写一个函数判断一个年份是不是闰年
+		    function fn4(n){
+		    	if((n%4==0 &&n%100!=0)||n%400==0){
+		    		document.write(n+"<h1>为闰年</h1>");
+		    	}else{
+		    		document.write(n+"为平年");
+		    	}
+		    }
+		    fn4(2020)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

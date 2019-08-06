@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//1,定义字符串
+			var str = new String("hello word");
+			
+			//2.
+			var str1 = String("hello word");
+			
+			//3.
+			var str2 = "hello word";
+			
+			//length
+			console.log(str2.length);
+			str2[0] = "w";//不能改变值
+			str2 = "wello word";
+			
+			console.log(str2);
+			
+			//  str.charAt(3) 
+			console.log(str2.charAt(1));//str2[1]
+		
+			//str.charCodeAt(3)   //获取下标为3的字符的编码(ASCII码)
+			console.log(str2.charCodeAt(1));//"101"
+			
+			//String.fromCharCode(94)    //ASCII编码转换成字符
+			console.log(String.fromCharCode(101));
+			
+			//str.concat()  连接字符串
+			var str3 = str2.concat("word");
+			console.log(str3);
+			
+			//str.indexOf("abc")  查找字符串第一次出现的位置,
+			console.log(str3.indexOf("Z"));
+			
+			//str.lastIndexOf("abc")  查找字符串最后一次出现的位置,
+			console.log(str3.lastIndexOf("l"));
+			
+			// str.search() 正则匹配 (返回第一次出现的位置), 如果没找到则返回-1
+			console.log(str3.search("l"));
+			console.log(str3.search(/W/i));
+			//注: g表示进行全局匹配，i表示匹配的时候忽略大小写
+			
+			//str.replace() 替换字符串
+			//var str4 = str3.replace("word","z");
+			var str4 = str3.replace(/word/g,"z");
+			console.log(str4);
+			
+			var str = "H e  l  ** l    o    Wo r         L d  !";
+			var str1 = str.replace(/\*/g,"");
+			var str2 = str1.replace(/ /g,"");
+			console.log(str2);
+			
+			//substring(start,end); //截取字符串 范围是[start, end)
+			var str = "hello word";
+			console.log(str.substring(6,10));//[6,10)
+			
+			//split(separator, howmany)—根据分隔符、拆分成数组
+			var arr = str.split("w");//join()
+			console.log(arr);
+			
+			//eval() 方法可计算某个字符串
+			var str = "10*3+2";
+			console.log(eval(str));//"32"
+			
+			//toLowerCase() 方法用于把字符串转换成小写
+			var str = "HRLLO word";
+			console.log(str.toLowerCase());//"hrllo word"
+			
+			//toUpperCase() 方法用于把字符串转换成大写
+			console.log(str.toUpperCase());
+			
+			//math
+			//Math.random()          //返回0-1之间的随机数
+			var num = Math.random();//(0,1)
+			console.log(num);
+			
+			//随机生成一个大写字母
+			var n = parseInt(Math.random()*26+65);
+			console.log(String.fromCharCode(n));
+			//Math.ceil(19.3)     //向上取整
+			//Math.floor(11.8)    //向下取整
+			console.log(Math.ceil(19.3));
+			console.log(Math.floor(19.3));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

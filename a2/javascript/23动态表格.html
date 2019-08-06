@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			td{
+				text-align: center;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var myid =  document.getElementById("myid");
+				var myname =  document.getElementById("myname");
+				var btn =  document.getElementById("btn");
+				var tab =  document.getElementById("tab");
+				btn.onclick = function(){
+					var tr0 = document.createElement("tr");
+					var td1 = document.createElement("td");
+					var td2 = document.createElement("td");
+					var td3 = document.createElement("td");
+					td1.innerHTML = myid.value;
+					td2.innerHTML = myname.value;
+					td3.innerHTML = "<a href='#'>删除</a>";
+					tr0.appendChild(td1);
+					tr0.appendChild(td2);
+					tr0.appendChild(td3);
+					tab.appendChild(tr0);
+					td3.onclick = function(){
+						tr0.parentNode.removeChild(tr0);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		id:<input type="text" id="myid" />
+		name:<input type="text" id="myname" />
+		<button id="btn">保存</button>
+		<table border="1" width="400" id="tab">
+			<tr>
+				<th>id</th>
+				<th>name</th>
+				<th>操作</th>
+			</tr>
+		</table>
+	</body>
+</html>

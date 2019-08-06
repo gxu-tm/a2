@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box1{
+				height: 20px;
+				width: 200px;
+				border: solid 1px black;
+			}
+			#box2{
+				height: 20px;
+				width: 0px;
+				background: red;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var box2 = document.getElementById("box2");
+				var span1 = document.getElementById("span1");
+				var i = 0 ;
+				var timer = setInterval(function(){
+					i+=2;
+					box2.style.width = i+"px";
+					span1.innerHTML  = i/2+"%";
+					if(i==200){
+						clearInterval(timer);
+					}
+				},100)
+			}
+		</script>
+	</head>
+	<body>
+		<h1>进度条</h1>
+		<div id="box1">
+			<div id="box2"></div>
+		</div>
+		<span id="span1">0%</span>
+	</body>
+</html>

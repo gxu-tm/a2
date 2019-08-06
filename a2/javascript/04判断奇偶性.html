@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//在输入框中输入数字, 点击按钮调用函数来判断奇偶性?
+			//脚本模式
+			//文档加载完毕后，才执行load事件
+			console.log("b");
+			window.onload = function(){
+				//获取元素节点
+				var val = document.getElementById("val");
+				var btn1 = document.getElementById("btn");
+				var val2 = document.getElementById("val2");
+				var btn12 = document.getElementById("btn2");
+				//文本框的值
+				console.log(val.value);
+				//绑定单机事件
+				btn1.onclick = function(){
+					console.log(val.value);
+					fn(val.value);
+				}
+				function fn(n){
+					if(n%2==0){
+						alert(n+"为偶数");
+					}else{
+						alert(n+"为奇数")
+					}
+				}
+				btn12.onclick = function(){
+					val2.value= "";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input id="val" type="text"  />
+		<button id="btn">判断</button>
+		<input id="val2" type="text"  />
+		<button id="btn2">清空</button>
+	</body>
+</html>

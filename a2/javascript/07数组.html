@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//定义数组，方法1
+			var arr = new Array();//空数组
+			
+			//定义数组，方法2
+			var arr1 = new Array(10);//定义了一个长度为10的数组
+			var arr1 = new Array(12,121,21,545,76);
+			
+			//字面两定义数组，方法3
+			var arr2 = [1,2,45,67,89];
+			
+			//访问数组元素
+			console.log(arr2[0]);
+			for(var i=0;i<arr2.length;i++){
+				document.write(arr2[i]+"<br/>");
+			}
+			//快速遍历 for in
+			for(i in arr2){
+				document.write(arr2[i]+"<br/>");
+			}
+			
+			//数组赋值
+			arr2[0] = 100;
+			console.log(arr2);
+			
+			//1.求数组中所有元素的和；
+			var arr3 = [1,2,45,67,89];
+			var s = 0 ;
+			for(var i=0;i<arr2.length;i++){
+				s+=arr2[i];
+			}
+			console.log(s);
+			
+			//让数组中的元素交换位置（重要）
+			var arr4 = [12,34];
+			var box = arr4[0];
+			arr4[0] = arr4[1];
+			arr4[1] = box;
+			console.log(arr4);
+			
+			//3.求数组的最大数和最小数,及最小数的下标
+			var arr5 = [12,3,56,87,98,100];
+			var max = arr5[0];
+			var min = arr5[0];
+			var n = 0 ;
+			for(var i=0;i<arr5.length;i++){
+				if(max<arr5[i]){
+					max = arr5[i];
+				}
+				if(min>arr5[i]){
+					min = arr5[i];
+					n=i;
+				}
+			}
+			console.log(max+","+min+","+n);
+			
+			//4.将数组[8,9,7,6,5,4]进行升序排序
+			var arr = [8,9,7,6,5,4];
+			for(var i=0;i<arr.length;i++){
+				for(var j=0;j<arr.length;j++){
+					if(arr[j]>arr[j+1]){
+						var box = arr[j];
+						arr[j] = arr[j+1];
+						arr[j+1] = box;
+					}
+				}
+			}
+			console.log(arr);// "4,5,6,7,8,9"
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
